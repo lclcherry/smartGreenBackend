@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micer.backend.dao.EnergyConsumptionDao">
+    <select id="getPeriodEC" resultType="java.util.HashMap">
+        select run_at, value from ${table} where uuid = #{uuid} order by run_at desc limit 7
+    </select>
+    <select id="getFixTimePeriodEC" resultType="java.util.HashMap">
+        select run_at, value from ${table} where uuid = #{uuid} and run_at &gt;= #{startTime} and run_at &lt;= #{endTime}
+    </select>
+</mapper>
