@@ -17,7 +17,13 @@ public class GlobalDefaultExceptionHandler {
 
     @ExceptionHandler(BusinessException.class)
     @ResponseBody
+    /**
+     * 自定义错误处理方法
+     * @param BusinessException
+     * @return JsonResult
+     * */
     public JsonResult errorHandle(BusinessException e){
+        //将错误信息输出到日志文件
         logger.error(e.getMessage());
         JsonResult jsonResult = new JsonResult(e.getCode(), e.getMsg());
         return jsonResult;
