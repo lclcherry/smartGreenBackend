@@ -1,10 +1,11 @@
 package com.micer.backend.controller;
 
-import com.micer.backend.pojo.BuildingEntity;
-import com.micer.backend.pojo.JsonResult;
+import com.micer.backend.utils.BusinessException;
+import com.micer.backend.utils.JsonResult;
 import com.micer.backend.service.BuildingEntityService;
 import com.micer.backend.service.EnergyConsumptionService;
-import org.apache.ibatis.annotations.Param;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,13 +24,20 @@ public class BackendController {
     @Autowired
     private EnergyConsumptionService energyConsumptionService = null;
 
+    protected static Logger logger = LoggerFactory.getLogger(BackendController.class);
+
     @GetMapping("/v1/entity/{uuid}")
     @ResponseBody
     public JsonResult<Map<String, Object>> getEntityInfo(@PathVariable String uuid){
+        if (uuid.contains("sa")){
+            throw new BusinessException("1", "uuid error");
+        }
         Map<String, Object> entityMap = new HashMap<>();
         entityMap = buildingEntityService.getIndexInfo(uuid);
 
         JsonResult<Map<String, Object>> jsonResult = new JsonResult<>(entityMap, "success");
+
+        logger.info("访问/v1/entity/{uuid}");
         return jsonResult;
     }
 

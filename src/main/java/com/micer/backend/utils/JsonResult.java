@@ -1,11 +1,11 @@
-package com.micer.backend.pojo;
+package com.micer.backend.utils;
 
 /**
  * 统一返回格式
  * */
 public class JsonResult<T> {
     private T data;
-    //成功为"0", 失败为"1"
+    //成功为 "0", 失败为 "1"
     private String code;
     private String msg;
 
@@ -20,7 +20,7 @@ public class JsonResult<T> {
     }
 
     /**
-     * 有数据返回时，状态码为0，默认提示信息为：success
+     * 有数据返回时，状态码为"0"，默认提示信息为：success
      * @param data
      */
     public JsonResult(T data){
@@ -30,7 +30,7 @@ public class JsonResult<T> {
     }
 
     /**
-     * 有数据返回，状态码为0，人为指定提示信息
+     * 有数据返回，状态码为"0"，人为指定提示信息
      * @param data
      * @param msg
      */
