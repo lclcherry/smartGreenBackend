@@ -111,3 +111,7 @@
 2019-01-11 16:15:45,171 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: null
 2019-01-11 16:15:45,181 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
 2019-01-11 16:15:47,665 ERROR (GlobalDefaultExceptionHandler.java:16)- uuid error
+2019-01-11 17:32:39,420 INFO (StartupInfoLogger.java:50)- Starting BackendApplication on LAPTOP-ADM9C27D with PID 11536 (D:\codingProject\javaproject\backend_smartGreen\target\classes started by kkoado in D:\codingProject\javaproject\backend_smartGreen)
+2019-01-11 17:32:39,447 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-01-11 17:32:39,451 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default
+2019-01-11 17:32:45,749 INFO (StartupInfoLogger.java:59)- Started BackendApplication in 7.434 seconds (JVM running for 10.404)
