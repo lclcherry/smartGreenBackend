@@ -1,3 +1,4 @@
+
 2019-01-13 00:10:19,147 INFO (StartupInfoLogger.java:50)- Starting BackendApplication on DESKTOP-OPPBBMB with PID 35392 (started by cherry in D:\IntellliJ Idea\Workspace\smartGreenBackend)
 2019-01-13 00:10:19,215 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
 2019-01-13 00:10:19,242 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default
@@ -2046,3 +2047,122 @@
 2019-01-13 14:01:02,450 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
 2019-01-13 14:01:02,450 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031367(String), 1452182400000(Long), 1470967200000(Long)
 2019-01-13 14:01:02,463 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+=======
+2019-01-11 15:00:39.120 ERROR (BackendController.java:39)- please show up
+2019-01-11 15:00:41.425 INFO (BackendController.java:38)- 访问/v1/entity/{uuid}
+2019-01-11 15:00:41.426 ERROR (BackendController.java:39)- please show up
+2019-01-11 15:00:42.783 INFO (BackendController.java:38)- 访问/v1/entity/{uuid}
+2019-01-11 15:00:42.784 ERROR (BackendController.java:39)- please show up
+2019-01-11 15:26:39.823 INFO (StartupInfoLogger.java:50)- Starting BackendApplication on LAPTOP-ADM9C27D with PID 10168 (D:\codingProject\javaproject\backend_smartGreen\target\classes started by kkoado in D:\codingProject\javaproject\backend_smartGreen)
+2019-01-11 15:26:39.837 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-01-11 15:26:39.840 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default
+2019-01-11 15:26:44.376 INFO (StartupInfoLogger.java:59)- Started BackendApplication in 5.77 seconds (JVM running for 7.733)
+2019-01-11 15:26:54.391 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-11 15:26:54.419 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030515a(String)
+2019-01-11 15:26:54.453 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 15:26:54.457 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select master_uuid from r_floor_room_t where slave_uuid = ? 
+2019-01-11 15:26:54.458 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030515a(String)
+2019-01-11 15:26:54.469 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 15:26:54.470 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_floor_t where uuid = ? 
+2019-01-11 15:26:54.470 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: null
+2019-01-11 15:26:54.481 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 15:26:54.484 ERROR (GlobalDefaultExceptionHandler.java:25)- null
+2019-01-11 15:36:39.309 INFO (StartupInfoLogger.java:50)- Starting BackendApplication on LAPTOP-ADM9C27D with PID 8744 (D:\codingProject\javaproject\backend_smartGreen\target\classes started by kkoado in D:\codingProject\javaproject\backend_smartGreen)
+2019-01-11 15:36:39.327 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-01-11 15:36:39.330 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default
+2019-01-11 15:36:43.216 INFO (StartupInfoLogger.java:59)- Started BackendApplication in 5.477 seconds (JVM running for 7.535)
+2019-01-11 15:36:57.538 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-11 15:36:57.571 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030515a(String)
+2019-01-11 15:36:57.605 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 15:36:57.611 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select master_uuid from r_floor_room_t where slave_uuid = ? 
+2019-01-11 15:36:57.612 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030515a(String)
+2019-01-11 15:36:57.622 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 15:36:57.623 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_floor_t where uuid = ? 
+2019-01-11 15:36:57.625 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: null
+2019-01-11 15:36:57.635 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 15:36:57.638 ERROR (GlobalDefaultExceptionHandler.java:26)- null
+2019-01-11 15:37:36.880 INFO (StartupInfoLogger.java:50)- Starting BackendApplication on LAPTOP-ADM9C27D with PID 19652 (D:\codingProject\javaproject\backend_smartGreen\target\classes started by kkoado in D:\codingProject\javaproject\backend_smartGreen)
+2019-01-11 15:37:36.885 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-01-11 15:37:36.889 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default
+2019-01-11 15:37:41.035 INFO (StartupInfoLogger.java:59)- Started BackendApplication in 5.199 seconds (JVM running for 7.068)
+2019-01-11 15:37:49.222 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-11 15:37:49.255 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030515a(String)
+2019-01-11 15:37:49.291 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 15:37:49.294 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select master_uuid from r_floor_room_t where slave_uuid = ? 
+2019-01-11 15:37:49.295 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030515a(String)
+2019-01-11 15:37:49.307 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 15:37:49.308 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_floor_t where uuid = ? 
+2019-01-11 15:37:49.309 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: null
+2019-01-11 15:37:49.320 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 15:39:25.627 INFO (StartupInfoLogger.java:50)- Starting BackendApplication on LAPTOP-ADM9C27D with PID 7880 (D:\codingProject\javaproject\backend_smartGreen\target\classes started by kkoado in D:\codingProject\javaproject\backend_smartGreen)
+2019-01-11 15:39:25.632 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-01-11 15:39:25.638 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default
+2019-01-11 15:39:30.093 INFO (StartupInfoLogger.java:59)- Started BackendApplication in 5.442 seconds (JVM running for 7.339)
+2019-01-11 15:39:37.295 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-11 15:39:37.323 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030515a(String)
+2019-01-11 15:39:37.356 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 15:39:37.360 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select master_uuid from r_floor_room_t where slave_uuid = ? 
+2019-01-11 15:39:37.360 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030515a(String)
+2019-01-11 15:39:37.371 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 15:39:37.372 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_floor_t where uuid = ? 
+2019-01-11 15:39:37.373 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: null
+2019-01-11 15:39:37.384 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 15:43:24,688 INFO (StartupInfoLogger.java:50)- Starting BackendApplication on LAPTOP-ADM9C27D with PID 2876 (D:\codingProject\javaproject\backend_smartGreen\target\classes started by kkoado in D:\codingProject\javaproject\backend_smartGreen)
+2019-01-11 15:43:24,694 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-01-11 15:43:24,696 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default
+2019-01-11 15:43:29,826 INFO (StartupInfoLogger.java:59)- Started BackendApplication in 6.28 seconds (JVM running for 8.648)
+2019-01-11 15:43:34,441 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-11 15:43:34,472 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030515a(String)
+2019-01-11 15:43:34,504 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 15:43:34,507 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select master_uuid from r_floor_room_t where slave_uuid = ? 
+2019-01-11 15:43:34,508 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030515a(String)
+2019-01-11 15:43:34,519 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 15:43:34,520 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_floor_t where uuid = ? 
+2019-01-11 15:43:34,521 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: null
+2019-01-11 15:43:34,531 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 15:43:34,534 ERROR (GlobalDefaultExceptionHandler.java:26)- null
+2019-01-11 15:47:24,013 INFO (StartupInfoLogger.java:50)- Starting BackendApplication on LAPTOP-ADM9C27D with PID 22040 (D:\codingProject\javaproject\backend_smartGreen\target\classes started by kkoado in D:\codingProject\javaproject\backend_smartGreen)
+2019-01-11 15:47:24,020 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-01-11 15:47:24,027 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default
+2019-01-11 15:47:28,317 INFO (StartupInfoLogger.java:59)- Started BackendApplication in 5.527 seconds (JVM running for 7.327)
+2019-01-11 15:47:35,228 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-11 15:47:35,263 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030515a(String)
+2019-01-11 15:47:35,296 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 15:47:35,301 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select master_uuid from r_floor_room_t where slave_uuid = ? 
+2019-01-11 15:47:35,302 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030515a(String)
+2019-01-11 15:47:35,315 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 15:47:35,316 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_floor_t where uuid = ? 
+2019-01-11 15:47:35,317 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: null
+2019-01-11 15:47:35,329 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 16:12:11,517 INFO (StartupInfoLogger.java:50)- Starting BackendApplication on LAPTOP-ADM9C27D with PID 15268 (D:\codingProject\javaproject\backend_smartGreen\target\classes started by kkoado in D:\codingProject\javaproject\backend_smartGreen)
+2019-01-11 16:12:11,557 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-01-11 16:12:11,563 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default
+2019-01-11 16:12:16,584 INFO (StartupInfoLogger.java:59)- Started BackendApplication in 6.496 seconds (JVM running for 9.136)
+2019-01-11 16:12:29,532 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-11 16:12:29,561 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030515a(String)
+2019-01-11 16:12:29,594 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 16:12:29,598 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select master_uuid from r_floor_room_t where slave_uuid = ? 
+2019-01-11 16:12:29,600 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030515a(String)
+2019-01-11 16:12:29,617 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 16:12:29,619 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_floor_t where uuid = ? 
+2019-01-11 16:12:29,620 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: null
+2019-01-11 16:12:29,631 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 16:15:34,562 INFO (StartupInfoLogger.java:50)- Starting BackendApplication on LAPTOP-ADM9C27D with PID 3632 (D:\codingProject\javaproject\backend_smartGreen\target\classes started by kkoado in D:\codingProject\javaproject\backend_smartGreen)
+2019-01-11 16:15:34,583 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-01-11 16:15:34,586 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default
+2019-01-11 16:15:40,293 INFO (StartupInfoLogger.java:59)- Started BackendApplication in 6.841 seconds (JVM running for 8.971)
+2019-01-11 16:15:45,084 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-11 16:15:45,117 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030515a(String)
+2019-01-11 16:15:45,155 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 16:15:45,158 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select master_uuid from r_floor_room_t where slave_uuid = ? 
+2019-01-11 16:15:45,159 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030515a(String)
+2019-01-11 16:15:45,170 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 16:15:45,171 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_floor_t where uuid = ? 
+2019-01-11 16:15:45,171 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: null
+2019-01-11 16:15:45,181 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-11 16:15:47,665 ERROR (GlobalDefaultExceptionHandler.java:16)- uuid error
+2019-01-11 17:32:39,420 INFO (StartupInfoLogger.java:50)- Starting BackendApplication on LAPTOP-ADM9C27D with PID 11536 (D:\codingProject\javaproject\backend_smartGreen\target\classes started by kkoado in D:\codingProject\javaproject\backend_smartGreen)
+2019-01-11 17:32:39,447 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-01-11 17:32:39,451 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default
+2019-01-11 17:32:45,749 INFO (StartupInfoLogger.java:59)- Started BackendApplication in 7.434 seconds (JVM running for 10.404)
+
