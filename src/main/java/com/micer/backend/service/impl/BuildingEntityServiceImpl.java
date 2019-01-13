@@ -6,6 +6,7 @@ import com.micer.backend.service.BuildingEntityService;
 import com.micer.backend.service.EnergyConsumptionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
+@Transactional
 public class BuildingEntityServiceImpl implements BuildingEntityService {
     @Autowired
     private BuildingEntityDao buildingEntityDao = null;

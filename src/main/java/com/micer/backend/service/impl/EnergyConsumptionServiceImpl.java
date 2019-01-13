@@ -6,6 +6,7 @@ import com.micer.backend.service.BuildingEntityService;
 import com.micer.backend.service.EnergyConsumptionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
+@Transactional
 public class EnergyConsumptionServiceImpl implements EnergyConsumptionService {
     @Autowired
     EnergyConsumptionDao energyConsumptionDao = null;
@@ -41,17 +43,17 @@ public class EnergyConsumptionServiceImpl implements EnergyConsumptionService {
     public Map<Long, Double>[] getPeriodEC(String uuid, int buildingType, int timeType){
         List<Map<Long, Double>> list = new ArrayList<>();
 
-        if(timeType == 0){
-            list = energyConsumptionDao.getPeriodEC(uuid, "d_room_hour_t");
-        } else if (timeType == 1){
-            list = energyConsumptionDao.getPeriodEC(uuid, "d_room_day_t");
-        } else if (timeType == 2){
-            list = energyConsumptionDao.getPeriodEC(uuid, "d_room_week_t");
-        } else if (timeType == 3){
-            list = energyConsumptionDao.getPeriodEC(uuid, "d_room_month_t");
-        } else if (timeType == 4) {
-            list = energyConsumptionDao.getPeriodEC(uuid, "d_room_year_t");
-        }
+//        if(timeType == 0){
+//            list = energyConsumptionDao.getPeriodEC(uuid, "d_room_hour_t");
+//        } else if (timeType == 1){
+//            list = energyConsumptionDao.getPeriodEC(uuid, "d_room_day_t");
+//        } else if (timeType == 2){
+//            list = energyConsumptionDao.getPeriodEC(uuid, "d_room_week_t");
+//        } else if (timeType == 3){
+//            list = energyConsumptionDao.getPeriodEC(uuid, "d_room_month_t");
+//        } else if (timeType == 4) {
+//            list = energyConsumptionDao.getPeriodEC(uuid, "d_room_year_t");
+//        }
 
         Map<Long, Double>[] maps = new Map[list.size()];
         for(int i = 0; i < list.size(); i++){
@@ -63,11 +65,11 @@ public class EnergyConsumptionServiceImpl implements EnergyConsumptionService {
     @Override
     public Map<Long, Double>[] getFixTimePeriodEC(String uuid, Long startTime, Long endTime){
         List<Map<Long, Double>> list = new ArrayList<>();
-        list = energyConsumptionDao.getFixTimePeriodEC(uuid, "d_room_hour_t", startTime, endTime);
+//        list = energyConsumptionDao.getFixTimePeriodEC(uuid, "d_room_hour_t", startTime, endTime);
         Map<Long, Double>[] maps = new Map[list.size()];
-        for(int i = 0; i < list.size(); i++){
-            maps[i] = list.get(i);
-        }
+//        for(int i = 0; i < list.size(); i++){
+//            maps[i] = list.get(i);
+//        }
         return maps;
     }
 }

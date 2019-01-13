@@ -21,7 +21,7 @@ public interface EnergyConsumptionDao {
      *     "value": xxx
      * }
      * */
-    public List<Map<Long, Double>> getPeriodEC(@Param("uuid") String uuid, @Param("table") String table);
+    public List<Map<String, Number>> getPeriodEC(@Param("uuid") String uuid, @Param("table") String table);
 
     /**
      * 获取实体从开始日期到终止日期的能耗数据
@@ -30,6 +30,6 @@ public interface EnergyConsumptionDao {
      * @param table 表名
      * @return List<Map<Long, Double>>
      * */
-    public List<Map<Long, Double>> getFixTimePeriodEC(@Param("uuid") String uuid, @Param("table") String table,
+    public List<Map<String, Number>> getFixTimePeriodEC(@Param("uuid") String uuid, @Param("table") String table,
                                     @Param("startTime") Long startTime, @Param("endTime") Long endTime);
 }
