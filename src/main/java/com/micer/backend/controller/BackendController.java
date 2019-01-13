@@ -19,23 +19,21 @@ import java.util.Map;
 @Controller
 public class BackendController {
     @Autowired
-    private BuildingEntityService buildingEntityService = null;
+    private BuildingEntityService buildingEntityService;
 
     @Autowired
-    private EnergyConsumptionService energyConsumptionService = null;
+    private EnergyConsumptionService energyConsumptionService;
 
     protected static Logger logger = LoggerFactory.getLogger(BackendController.class);
 
     @GetMapping("/v1/entity/{uuid}")
     @ResponseBody
-    public JsonResult<Map<String, Object>> getEntityInfo(@PathVariable String uuid){
-        if (uuid.contains("sa")){
-            throw new BusinessException("1", "uuid error");
-        }
+    public Object getEntityInfo(@PathVariable String uuid){
+        
         Map<String, Object> entityMap = new HashMap<>();
         entityMap = buildingEntityService.getIndexInfo(uuid);
 
-        JsonResult<Map<String, Object>> jsonResult = new JsonResult<>(entityMap, "success");
+        Object jsonResult = new JsonResult<>(entityMap, "success");
 
         logger.info("访问/v1/entity/{uuid}");
         return jsonResult;

@@ -37,4 +37,9 @@ public interface BuildingEntityDao {
      * @return List<String> 下级建筑uuid
      * */
     public List<String> getSlavesUuid(@Param("uuid") String uuid, @Param("table") String table);
+    
+    
+    public BuildingEntity getMasterEntityInfo(@Param("uuid") String uuid,
+                                              @Param("relaion_table") String relation_table,
+                                              @Param("master_table") String master_table);
 }
