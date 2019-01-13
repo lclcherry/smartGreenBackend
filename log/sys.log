@@ -510,3 +510,515 @@
 2019-01-13 00:12:18,012 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
 2019-01-13 00:12:18,012 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031367(String), 1452182400000(Long), 1470967200000(Long)
 2019-01-13 00:12:18,025 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:19,817 INFO (StartupInfoLogger.java:50)- Starting BackendApplication on DESKTOP-OPPBBMB with PID 6016 (started by cherry in D:\IntellliJ Idea\Workspace\smartGreenBackend)
+2019-01-13 13:23:19,875 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-01-13 13:23:19,912 INFO (SpringApplication.java:675)- No active profile set, falling back to default profiles: default
+2019-01-13 13:23:30,585 INFO (StartupInfoLogger.java:59)- Started BackendApplication in 13.366 seconds (JVM running for 22.171)
+2019-01-13 13:23:44,500 INFO (GetMoreDetailController.java:31)- MoreDetail数据:master_uuid[S000120020019],uuid[S000120030002],type[day],startTime[1452182400],endTime[1470967200]
+2019-01-13 13:23:46,785 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select slave_uuid from r_floor_room_t where master_uuid = ? 
+2019-01-13 13:23:46,861 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120020019(String)
+2019-01-13 13:23:46,945 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 84
+2019-01-13 13:23:46,961 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:46,961 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030001(String)
+2019-01-13 13:23:46,975 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:46,979 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:46,979 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030001(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,035 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,037 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,039 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030002(String)
+2019-01-13 13:23:47,051 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,053 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,054 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030002(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,091 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,092 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,092 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030003(String)
+2019-01-13 13:23:47,104 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,106 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,107 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030003(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,128 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,130 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,132 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030004(String)
+2019-01-13 13:23:47,144 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,145 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,146 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030004(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,166 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,167 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,169 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030005(String)
+2019-01-13 13:23:47,179 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,181 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,182 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030005(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,204 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,206 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,208 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030006(String)
+2019-01-13 13:23:47,218 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,220 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,221 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030006(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,236 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,238 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,238 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030007(String)
+2019-01-13 13:23:47,249 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,250 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,252 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030007(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,268 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,270 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,271 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030008(String)
+2019-01-13 13:23:47,284 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,286 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,288 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030008(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,306 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,307 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,308 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030009(String)
+2019-01-13 13:23:47,319 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,321 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,323 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030009(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,341 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,342 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,343 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030010(String)
+2019-01-13 13:23:47,355 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,358 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,359 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030010(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,379 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,380 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,383 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030011(String)
+2019-01-13 13:23:47,393 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,395 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,396 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030011(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,410 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,412 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,414 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030012(String)
+2019-01-13 13:23:47,424 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,426 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,426 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030012(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,441 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,442 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,443 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030013(String)
+2019-01-13 13:23:47,453 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,455 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,456 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030013(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,471 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,473 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,473 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030014(String)
+2019-01-13 13:23:47,485 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,487 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,488 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030014(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,507 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,510 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,511 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030015(String)
+2019-01-13 13:23:47,522 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,524 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,525 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030015(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,540 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,541 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,542 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030016(String)
+2019-01-13 13:23:47,556 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,558 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,559 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030016(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,576 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,577 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,578 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030017(String)
+2019-01-13 13:23:47,590 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,591 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,592 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030017(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,607 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,609 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,610 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030018(String)
+2019-01-13 13:23:47,621 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,622 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,624 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030018(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,640 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,641 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,643 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030019(String)
+2019-01-13 13:23:47,654 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,656 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,657 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030019(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,672 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,674 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,674 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030020(String)
+2019-01-13 13:23:47,691 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,694 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,695 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030020(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,712 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,716 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,717 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030021(String)
+2019-01-13 13:23:47,732 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,733 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,734 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030021(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,763 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,765 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,766 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030022(String)
+2019-01-13 13:23:47,777 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,778 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,779 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030022(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,794 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,796 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,797 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030023(String)
+2019-01-13 13:23:47,808 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,809 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,810 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030023(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,829 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,837 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,841 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030024(String)
+2019-01-13 13:23:47,895 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,896 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,896 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030024(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,911 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,912 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,913 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030025(String)
+2019-01-13 13:23:47,924 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,925 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,926 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030025(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,939 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,939 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,940 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030026(String)
+2019-01-13 13:23:47,950 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,951 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,952 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030026(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,964 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,965 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,966 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030027(String)
+2019-01-13 13:23:47,976 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:47,977 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:47,977 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030027(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:47,989 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:47,990 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:47,991 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030028(String)
+2019-01-13 13:23:48,001 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,001 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,002 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030028(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,015 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,015 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,016 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030029(String)
+2019-01-13 13:23:48,025 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,026 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,026 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030029(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,041 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,042 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,043 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030030(String)
+2019-01-13 13:23:48,053 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,054 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,055 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030030(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,067 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,068 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,069 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030031(String)
+2019-01-13 13:23:48,078 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,079 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,080 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030031(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,094 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,095 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,096 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030032(String)
+2019-01-13 13:23:48,106 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,108 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,110 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030032(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,125 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,126 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,127 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030033(String)
+2019-01-13 13:23:48,138 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,139 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,140 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030033(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,158 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,160 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,160 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030034(String)
+2019-01-13 13:23:48,171 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,172 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,174 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030034(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,195 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,196 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,197 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030035(String)
+2019-01-13 13:23:48,208 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,209 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,211 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030035(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,228 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,229 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,230 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030036(String)
+2019-01-13 13:23:48,240 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,241 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,242 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030036(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,258 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,260 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,261 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030037(String)
+2019-01-13 13:23:48,271 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,273 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,274 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030037(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,292 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,293 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,294 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030038(String)
+2019-01-13 13:23:48,305 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,307 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,308 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120030038(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,328 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,330 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,332 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031322(String)
+2019-01-13 13:23:48,343 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,344 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,345 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031322(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,372 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,376 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,377 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031323(String)
+2019-01-13 13:23:48,390 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,392 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,393 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031323(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,410 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,413 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,416 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031324(String)
+2019-01-13 13:23:48,428 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,429 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,430 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031324(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,445 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,448 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,450 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031325(String)
+2019-01-13 13:23:48,462 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,465 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,466 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031325(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,477 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:48,478 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,479 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031326(String)
+2019-01-13 13:23:48,490 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,491 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,492 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031326(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,502 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:48,503 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,503 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031327(String)
+2019-01-13 13:23:48,514 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,515 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,516 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031327(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,526 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:48,527 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,528 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031328(String)
+2019-01-13 13:23:48,539 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,540 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,541 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031328(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,551 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:48,551 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,553 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031329(String)
+2019-01-13 13:23:48,563 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,565 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,566 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031329(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,576 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:48,577 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,577 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031330(String)
+2019-01-13 13:23:48,588 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,589 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,593 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031330(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,603 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:48,604 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,605 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031331(String)
+2019-01-13 13:23:48,615 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,617 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,619 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031331(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,639 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,641 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,641 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031332(String)
+2019-01-13 13:23:48,652 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,653 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,654 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031332(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,663 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:48,665 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,665 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031333(String)
+2019-01-13 13:23:48,676 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,677 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,678 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031333(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,688 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:48,689 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,690 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031334(String)
+2019-01-13 13:23:48,701 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,703 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,704 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031334(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,713 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:48,715 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,716 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031335(String)
+2019-01-13 13:23:48,727 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,728 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,729 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031335(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,738 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:48,739 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,740 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031336(String)
+2019-01-13 13:23:48,751 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,753 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,754 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031336(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,763 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:48,764 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,765 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031337(String)
+2019-01-13 13:23:48,776 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,777 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,778 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031337(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,787 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:48,788 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,789 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031338(String)
+2019-01-13 13:23:48,801 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,802 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,806 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031338(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,832 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,834 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,835 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031339(String)
+2019-01-13 13:23:48,846 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,847 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,852 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031339(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,862 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:48,868 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,868 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031340(String)
+2019-01-13 13:23:48,879 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,880 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,882 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031340(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,891 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:48,893 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,894 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031341(String)
+2019-01-13 13:23:48,904 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,905 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,906 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031341(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,921 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,922 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,923 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031342(String)
+2019-01-13 13:23:48,933 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,934 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,935 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031342(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,949 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,950 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,951 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031343(String)
+2019-01-13 13:23:48,961 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,962 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,963 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031343(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:48,978 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:48,979 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:48,980 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031344(String)
+2019-01-13 13:23:48,991 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:48,992 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:48,994 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031344(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,004 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:49,005 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,006 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031345(String)
+2019-01-13 13:23:49,016 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,018 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,020 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031345(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,030 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:49,031 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,032 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031346(String)
+2019-01-13 13:23:49,042 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,043 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,044 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031346(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,054 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:49,056 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,057 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031347(String)
+2019-01-13 13:23:49,068 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,069 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,070 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031347(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,079 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:49,081 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,082 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031348(String)
+2019-01-13 13:23:49,093 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,094 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,095 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031348(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,105 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:49,106 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,107 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031349(String)
+2019-01-13 13:23:49,117 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,118 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,119 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031349(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,129 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:49,131 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,132 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031350(String)
+2019-01-13 13:23:49,142 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,144 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,144 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031350(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,154 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:49,155 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,156 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031351(String)
+2019-01-13 13:23:49,166 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,168 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,169 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031351(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,178 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:49,180 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,180 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031352(String)
+2019-01-13 13:23:49,191 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,192 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,193 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031352(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,202 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:49,204 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,205 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031353(String)
+2019-01-13 13:23:49,215 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,217 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,219 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031353(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,229 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:49,235 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,236 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031354(String)
+2019-01-13 13:23:49,246 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,248 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,249 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031354(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,259 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:49,261 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,262 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031355(String)
+2019-01-13 13:23:49,273 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,274 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,275 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031355(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,290 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:49,291 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,292 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031356(String)
+2019-01-13 13:23:49,303 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,304 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,305 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031356(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,321 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:49,322 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,323 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031357(String)
+2019-01-13 13:23:49,334 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,335 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,336 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031357(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,357 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:49,358 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,359 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031358(String)
+2019-01-13 13:23:49,370 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,371 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,372 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031358(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,387 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:49,424 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,425 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031359(String)
+2019-01-13 13:23:49,435 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,437 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,438 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031359(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,452 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:49,453 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,454 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031360(String)
+2019-01-13 13:23:49,465 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,468 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,469 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031360(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,479 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:49,481 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,482 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031361(String)
+2019-01-13 13:23:49,493 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,494 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,495 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031361(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,504 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:49,506 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,506 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031362(String)
+2019-01-13 13:23:49,517 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,518 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,519 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031362(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,528 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:49,532 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,532 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031363(String)
+2019-01-13 13:23:49,543 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,544 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,545 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031363(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,554 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:49,555 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,556 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031364(String)
+2019-01-13 13:23:49,566 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,567 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,568 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031364(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,577 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:49,578 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,579 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031365(String)
+2019-01-13 13:23:49,590 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,592 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,593 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031365(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,603 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 0
+2019-01-13 13:23:49,604 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,605 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031366(String)
+2019-01-13 13:23:49,615 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,616 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,617 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031366(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,631 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
+2019-01-13 13:23:49,632 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select id, uuid, name, `desc`, `order` from e_room_t where uuid = ? 
+2019-01-13 13:23:49,633 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031367(String)
+2019-01-13 13:23:49,643 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-01-13 13:23:49,644 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select run_at, value from d_room_day_t where uuid = ? and run_at >= ? and run_at <= ? 
+2019-01-13 13:23:49,645 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: S000120031367(String), 1452182400000(Long), 1470967200000(Long)
+2019-01-13 13:23:49,666 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 218
