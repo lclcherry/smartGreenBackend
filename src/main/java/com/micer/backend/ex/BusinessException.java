@@ -1,4 +1,4 @@
-package com.micer.backend.utils;
+package com.micer.backend.ex;
 
 /**
  * 自定义异常类，继承RuntimeException
@@ -8,25 +8,27 @@ package com.micer.backend.utils;
 public class BusinessException extends RuntimeException{
     private static long serialVersionUID = 1L;
 
-    private String code;
+    private int code;
     private String msg;
 
     public BusinessException(){}
 
-    public BusinessException(String code, String msg){
+    public BusinessException(int code, String msg){
         super(msg);
         this.code = code;
         this.msg = msg;
     }
-
-    public String getCode(){
+    
+    public int getCode()
+    {
         return code;
     }
-
-    public void setCode(String code) {
+    
+    public void setCode(int code)
+    {
         this.code = code;
     }
-
+    
     public String getMsg() {
         return msg;
     }

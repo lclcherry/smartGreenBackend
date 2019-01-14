@@ -34,6 +34,17 @@ public class Result
         return data;
     }
     
+    // 暂时开放2个set方法
+    public void setMsg(String msg)
+    {
+        this.msg = msg;
+    }
+    
+    public void setData(Object data)
+    {
+        this.data = data;
+    }
+    
     public static class ResultBuilder
     {
         private int statusCode;
@@ -81,6 +92,6 @@ public class Result
     
     // 暂时粗粒度地定义几种消息状态，后面再细粒度自定义状态码
     public static ResultBuilder OK() {return new ResultBuilder(200, "OK");}
-    public static ResultBuilder BadRequest() {return new ResultBuilder(403, "Bad Request");}
+    public static ResultBuilder BadRequest() {return new ResultBuilder(400, "Bad Request");}
     public static ResultBuilder NotFound() {return new ResultBuilder(404, "Not Found");}
 }

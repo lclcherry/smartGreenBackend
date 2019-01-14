@@ -15,10 +15,10 @@ public interface BuildingEntityDao {
      * 获取实体信息
      * 相关数据库表: e_room_t/e_floor_t/e_building_t/e_project_t
      * @param uuid 实体唯一标识
-     * @param table 表名
+     * @param e_entity_t 表名
      * @return BuildingEntity 建筑实体信息
      * */
-    public BuildingEntity getEntityInfo(@Param("uuid") String uuid, @Param("table") String table);
+    public BuildingEntity getEntityInfo(@Param("uuid") String uuid, @Param("table") String e_entity_t);
 
     /**
      * 获取实体上级建筑的uuid(master_uuid)
@@ -38,8 +38,15 @@ public interface BuildingEntityDao {
      * */
     public List<String> getSlavesUuid(@Param("uuid") String uuid, @Param("table") String table);
     
-    
-    public BuildingEntity getMasterEntityInfo(@Param("uuid") String uuid,
-                                              @Param("relaion_table") String relation_table,
+    /**
+     * 获取实体的上级建筑实体的信息
+     * 为了避免访问两次数据库，所以就单独写出来了
+     * @param slave_uuid
+     * @param relation_table
+     * @param master_table
+     * @return
+     */
+    public BuildingEntity getMasterEntityInfo(@Param("slave_uuid") String slave_uuid,
+                                              @Param("relation_table") String relation_table,
                                               @Param("master_table") String master_table);
 }

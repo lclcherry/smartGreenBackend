@@ -13,7 +13,8 @@
         select slave_uuid from ${table} where master_uuid = #{uuid}
     </select>
     <select id="getMasterEntityInfo" resultType="BuildingEntity">
-        select
-        from ``
+        select M.*
+        from (select `master_uuid` from ${relation_table} where `slave_uuid` = #{slave_uuid}) as R
+          join ${master_table} as M on R.master_uuid = M.uuid
     </select>
 </mapper>
