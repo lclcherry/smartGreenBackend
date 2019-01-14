@@ -4,17 +4,17 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.micer.backend.dao.BuildingEntityDao">
     <select id="getEntityInfo" resultType="BuildingEntity">
-        select `id`, `uuid`, `name`, `desc`, `order` from ${table} where uuid = #{uuid}
+        select `id`, `uuid`, `name`, `desc`, `order` from ${e_entity_t} where uuid = #{uuid}
     </select>
     <select id="getMasterUuid" resultType="String">
-        select master_uuid from ${table} where slave_uuid = #{uuid}
+        select master_uuid from ${r_master_slave_t} where slave_uuid = #{slave_uuid}
     </select>
     <select id="getSlavesUuid" resultType="String">
-        select slave_uuid from ${table} where master_uuid = #{uuid}
+        select slave_uuid from ${r_master_slave_t} where master_uuid = #{master_uuid}
     </select>
     <select id="getMasterEntityInfo" resultType="BuildingEntity">
         select M.*
-        from (select `master_uuid` from ${relation_table} where `slave_uuid` = #{slave_uuid}) as R
-          join ${master_table} as M on R.master_uuid = M.uuid
+        from (select `master_uuid` from ${r_master_slave_t} where `slave_uuid` = #{slave_uuid}) as R
+          join ${e_master_t} as M on R.master_uuid = M.uuid
     </select>
 </mapper>

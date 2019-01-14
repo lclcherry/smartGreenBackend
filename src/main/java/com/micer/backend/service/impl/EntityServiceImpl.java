@@ -10,9 +10,11 @@ import com.micer.backend.enums.TimeType;
 import com.micer.backend.pojo.BuildingEntity;
 import com.micer.backend.service.EntityService;
 import com.micer.backend.utils.EntityUtil;
-import com.micer.backend.utils.StringUtil;
+import com.micer.backend.utils.TimeUtil;
+import org.apache.ibatis.jdbc.Null;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -27,6 +29,12 @@ public class EntityServiceImpl implements EntityService
     @Autowired
     private EnergyConsumptionDao energyConsumptionDao;
     
+    /**
+     * 获取实体基本信息 + 上层建筑信息
+     * @param uuid 实体标识
+     * @param entityType 实体类型
+     * @return
+     */
     public Map<String, Object> getEntityBaseInfo(String uuid, EntityType entityType)
     {
         BuildingEntity buildingEntity = buildingEntityDao.getEntityInfo(uuid, entityType.getEntityTable());
@@ -39,19 +47,24 @@ public class EntityServiceImpl implements EntityService
         return data;
     }
     
+    /**
+     * 获取实体基本信息 + 上层建筑信息 + 各个时间维度下的最新能耗数据
+     * @param uuid
+     * @return
+     */
     @Override
     public Result getEntityInfo(String uuid)
     {
-        EntityType entityType= EntityUtil.getEntityTypeFromUUID(uuid);
+        EntityType entityType= EntityType.getEntityTypeFromUUID(uuid);
         if(entityType == null)
         {
-            throw new IllegalArgumentException("uuid未指定有效实体类型");
-            //            return Result.BadRequest().msg("uuid未指定有效实体类型").build();
+//            throw new IllegalArgumentException("uuid未指定有效实体类型");
+            return Result.BadRequest().msg("uuid未指定有效实体类型").build();
         }
         Map<String, Object> data = getEntityBaseInfo(uuid, entityType);
     
         Iterator<TimeType> timeTypeIterator = TimeType.iterator();
-        while (timeTypeIterator.hasNext())
+        while (timeTypeIterator.hasNext()) // 迭代器遍历各个时间维度
         {
             TimeType timeType = timeTypeIterator.next();
             data.put(timeType.getType(), getEntityRecentEC(uuid, entityType, timeType));
@@ -64,66 +77,110 @@ public class EntityServiceImpl implements EntityService
      * 递归调用，把实体的上一层实体的数据填充进superStructure中
      * @param uuid
      * @param entityType
-     * @param superStructure
+     * @param superStructure 用于接收实体数据
      */
     private void getSuperStructure(String uuid, EntityType entityType, Map<String, Object> superStructure)
     {
         if(entityType == null || entityType == EntityType.PROJECT) return;
         BuildingEntity masterEntity = buildingEntityDao.getMasterEntityInfo(uuid, entityType.getMasterRelationTable(), entityType.getMasterType().getEntityTable());
         superStructure.put(entityType.getMasterType().getType(), masterEntity);
-//        uuid = buildingEntityDao.getMasterUuid(uuid, entityType.getMasterRelationTable());
         uuid = masterEntity.getUuid();
         entityType = entityType.getMasterType();
         getSuperStructure(uuid, entityType, superStructure);
     }
     
+    /**
+     * 获取实体某一时间维度下的最新7条数据
+     * @param uuid 实体标识
+     * @param entityType 实体类型
+     * @param timeType 时间类型
+     * @return
+     */
     public Map<String, Object> getEntityRecentEC(String uuid, EntityType entityType, TimeType timeType)
     {
         String entityTimeTable = EntityUtil.getEntityTimeTable(entityType, timeType);
         Map<String, Object> entityTimeEC = new LinkedHashMap<>();
-        List<Double> top2EC = energyConsumptionDao.getTopTwoEC(uuid, entityTimeTable);
-//        List<Number> top2EC = energyConsumptionDao.getTop2EC(uuid, entityTimeTable);
-        Number value = top2EC.get(0);
-        Number last_value = top2EC.size() > 1 ? top2EC.get(1) : -1; // 建议确定一个DEFAULT_VALUE
+//        List<Double> top2EC = energyConsumptionDao.getTopTwoEC(uuid, entityTimeTable);
+        List<Map<String, Number>> top2EC = energyConsumptionDao.getTop2EC(uuid, entityTimeTable);
+        Number value = top2EC.get(0).get("value");
+        Number last_value = top2EC.size() > 1 ? top2EC.get(1).get("value") : -1; // 建议确定一个DEFAULT_VALUE
         
-        // TODO: circle_rate 环比
-        
+        // circle_rate 环比
+        Long mostRecentTimeStamp = (top2EC.get(0).get("run_at")).longValue();
+        Double circle_value;
+        if(timeType == TimeType.YEAR)
+        {
+            circle_value = null;
+        }else{
+            Long circle_timestamp = TimeUtil.getCircleValueUnixTimeStamp(mostRecentTimeStamp, timeType);
+            circle_value = energyConsumptionDao.getValueAt(uuid, entityTimeTable, circle_timestamp);
+        }
         
         List<Map<String, Number>> period_data = energyConsumptionDao.getPeriodEC(uuid, entityTimeTable);
         entityTimeEC.put("value", value);
         entityTimeEC.put("last_value", last_value);
-//        entityTimeEC.put("circle_value", last_value);
+        entityTimeEC.put("circle_value", circle_value);
         entityTimeEC.put("period_data", period_data);
         
         return entityTimeEC;
     }
     
+    /**
+     * 获取实体特定时间维度下，特定时间段[startTime, endTime]内的能耗数据
+     * @param uuid
+     * @param entityType
+     * @param timeType
+     * @param startTime 开始时间点（包含）
+     * @param endTime 结束时间点（包含）
+     * @return
+     */
     public Map<String, Object> getEntityFixTimePeriodEC(String uuid, EntityType entityType, TimeType timeType,
                                            Long startTime, Long endTime)
     {
         String entityTimeTable = EntityUtil.getEntityTimeTable(entityType, timeType);
         Map<String, Object> entityTimeEC = new LinkedHashMap<>();
-        List<Double> top2EC = energyConsumptionDao.getTopTwoEC(uuid, entityTimeTable);
-        //        List<Number> top2EC = energyConsumptionDao.getTop2EC(uuid, entityTimeTable);
-        Number value = top2EC.get(0);
-        Number last_value = top2EC.size() > 1 ? top2EC.get(1) : -1; // 建议确定一个DEFAULT_VALUE
         
-        // TODO: circle_rate 环比
-        
+        // last_value 同比
+        Long last_timestamp = TimeUtil.getLastValueUnixTimeStamp(endTime, timeType);
+        Double last_value = energyConsumptionDao.getValueAt(uuid, entityTimeTable, last_timestamp);
+    
+        // circle_value 环比
+        Double circle_value;
+        if(timeType == TimeType.YEAR)
+        {
+            circle_value = null;
+        }else{
+            Long circle_timestamp = TimeUtil.getCircleValueUnixTimeStamp(endTime, timeType);
+            circle_value = energyConsumptionDao.getValueAt(uuid, entityTimeTable, circle_timestamp);
+        }
         
         List<Map<String, Number>> fixTimePeriodEC = energyConsumptionDao.getFixTimePeriodEC(uuid, entityTimeTable, startTime, endTime);
+        Double value = 0.0;
+        for(Map<String, Number>map: fixTimePeriodEC)
+        {
+            value += (Double) map.get("value"); // 也可以考虑直接从数据库用sum语句？
+        }
+        
         entityTimeEC.put("value", value);
         entityTimeEC.put("last_value", last_value);
-        //        entityTimeEC.put("circle_value", last_value);
+        entityTimeEC.put("circle_value", circle_value);
         entityTimeEC.put("period_data", fixTimePeriodEC);
         
         return entityTimeEC;
     }
     
+    /**
+     * 获取实体基本信息 + 上层建筑信息 + 实体特定时间下的能耗数据
+     * @param uuid
+     * @param type 时间维度类型
+     * @param startTime
+     * @param endTime
+     * @return
+     */
     @Override
     public Result getDetails(String uuid, String type, Long startTime, Long endTime)
     {
-        EntityType entityType= EntityUtil.getEntityTypeFromUUID(uuid);
+        EntityType entityType= EntityType.getEntityTypeFromUUID(uuid);
         if(entityType == null)
         {
             return Result.BadRequest().msg("uuid未指定有效实体类型").build();
@@ -134,35 +191,42 @@ public class EntityServiceImpl implements EntityService
         return Result.OK().data(data).build();
     }
     
+    /**
+     * 获取该实体各个“兄弟实体”的能耗数据和比率
+     * @param master_uuid 主实体标识
+     * @param uuid 当前实体标识
+     * @param type 时间维度类型
+     * @param startTime
+     * @param endTime
+     * @return
+     */
     @Override
     public Result getMoreDetail(String master_uuid, String uuid, String type, Long startTime, Long endTime) {
-        Result result = new Result(201,"");
-        if(StringUtil.isEmpty(master_uuid)) {
-            result.setMsg("master_uuid为空，无法获取uuid同一层级实体数据");
-            return result;
+        if(StringUtils.isEmpty(master_uuid)) {
+            return Result.BadRequest().msg("master_uuid为空，无法获取uuid同一层级实体数据").build();
         }
         
-        EntityType buildingType = EntityUtil.getEntityTypeFromUUID(master_uuid);
-        EntityType slaveBuildingType = EntityUtil.getEntityTypeFromUUID(uuid);
-        String masterslaveTable = buildingType.getMasterRelationTable();
+        EntityType buildingType = EntityType.getEntityTypeFromUUID(master_uuid);
+        EntityType slaveBuildingType = EntityType.getEntityTypeFromUUID(uuid);
+        String masterSlaveTable = slaveBuildingType.getMasterRelationTable();
         String buildingTable = slaveBuildingType.getEntityTable();
         
-        List<String> slave_uuid = buildingEntityDao.getSlavesUuid(master_uuid,masterslaveTable);
+        List<String> slave_uuid_list = buildingEntityDao.getSlavesUuid(master_uuid,masterSlaveTable);
         
         List<Map<String,Object>> slaveData = new ArrayList<>();
-        double[] valueSum = new double[slave_uuid.size()];
+        double[] valueSum = new double[slave_uuid_list.size()];
         List<Map<String,Number>> value_rate = new ArrayList<>();
         double totalValue = 0;
-        DecimalFormat twoDog = new DecimalFormat("#.00");
+        DecimalFormat twoDotFormat = new DecimalFormat("#.00");
         
-        for(int i = 0;i<slave_uuid.size();i++) {
-            String slave = slave_uuid.get(i);
-            BuildingEntity buildingEntity = buildingEntityDao.getEntityInfo(slave,buildingTable);
-            List<Map<String, Number>> energy = getFixedTimePeriodEC(slave,slaveBuildingType,TimeType.valueOf(type),startTime,endTime);
+        for(int i = 0;i<slave_uuid_list.size();i++) {
+            String slave_uuid = slave_uuid_list.get(i);
+            BuildingEntity buildingEntity = buildingEntityDao.getEntityInfo(slave_uuid,buildingTable);
+            List<Map<String, Number>> energy = getFixedTimePeriodEC(slave_uuid,slaveBuildingType,TimeType.fromType(type),startTime,endTime);
             for(int j = 0;j<energy.size();j++) {
                 Map<String, Number> time_value = energy.get(i);
                 double db = time_value.get("value").doubleValue();
-                valueSum[i] += time_value.get("value") == null ?  0.0 : time_value.get("value").doubleValue();
+                valueSum[i] += Math.max(0, db); // 未采集到的值为-1
             }
             totalValue += valueSum[i];
             
@@ -176,8 +240,8 @@ public class EntityServiceImpl implements EntityService
             slaveData.add(slaveDataMap);
         }
         
-        for(int i = 0;i<slave_uuid.size();i++) {
-            String slave = slave_uuid.get(i);
+        for(int i = 0;i<slave_uuid_list.size();i++) {
+            String slave = slave_uuid_list.get(i);
             double rate = (valueSum[i]/totalValue)*100;
             BigDecimal bg = new BigDecimal(rate);
             value_rate.get(i).put("rate",bg.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
@@ -187,14 +251,21 @@ public class EntityServiceImpl implements EntityService
         
         Map<String,Object> data = new HashMap<>();
         data.put("comparison",slaveData);
-        result.setMsg("success");
-        result.setData(data);
-        return result;
+        return Result.OK().data(data).build();
     }
     
+    /**
+     * 获取实体在特定时间维度下，特定时间段的能耗数据
+     * @param uuid
+     * @param entityType
+     * @param timeType
+     * @param startTime
+     * @param endTime
+     * @return
+     */
     public List<Map<String, Number>> getFixedTimePeriodEC(String uuid, EntityType entityType, TimeType timeType, Long startTime, Long endTime) {
         String tableStr = EntityUtil.getEntityTimeTable(entityType, timeType);
-        List<Map<String, Number>> result = energyConsumptionDao.getFixTimePeriodEC(uuid, tableStr,startTime*1000,endTime*1000);
+        List<Map<String, Number>> result = energyConsumptionDao.getFixTimePeriodEC(uuid, tableStr,startTime,endTime);
         return result;
     }
 }

@@ -2,9 +2,13 @@ package com.micer.backend.enums;
 
 import org.springframework.http.HttpStatus;
 
+/**
+ * 自定义错误状态码
+ * 暂时用不上，可以考虑在后续迭代中规范设计
+ */
 public enum ErrorCode
 {
-    OK_COMMON(200_0000, "success"),
+//    OK_COMMON(200_0000, "success"),
     
     // 400 BadRequest
     PARAM_ERR_COMMON(400_1000, "Bad Request"),
@@ -33,7 +37,7 @@ public enum ErrorCode
     
     /**
      * 获取相应的http状态码，用于设置返回response的status
-     * @return
+     * @return HttpStatus
      */
     public HttpStatus getHttpStatus()
     {

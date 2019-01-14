@@ -2,7 +2,7 @@ package com.micer.backend.entity;
 
 public class Result
 {
-    private int statusCode;
+    private int statusCode; // 状态码
     private String msg;
     private Object data;
     
@@ -34,17 +34,22 @@ public class Result
         return data;
     }
     
-    // 暂时开放2个set方法
+    // 暂时开放2个set方法，后续迭代中会删掉这两个方法
+    @Deprecated
     public void setMsg(String msg)
     {
         this.msg = msg;
     }
-    
+
+    @Deprecated
     public void setData(Object data)
     {
         this.data = data;
     }
     
+    // 建议用ResultBuilder的build方法来生成Result
+    // 这样Result的状态能够维持一致性：要么没有Result，要么Result的状态是不可改变的 immutabel
+    // 可以用 Result.OK().msg("success").data(data).build(); 的流式API方式来构建Result
     public static class ResultBuilder
     {
         private int statusCode;
@@ -90,8 +95,9 @@ public class Result
         }
     }
     
-    // 暂时粗粒度地定义几种消息状态，后面再细粒度自定义状态码
+    // 暂时粗粒度地定义几种消息状态，后面再细粒度自定义ErrorCode状态码
     public static ResultBuilder OK() {return new ResultBuilder(200, "OK");}
     public static ResultBuilder BadRequest() {return new ResultBuilder(400, "Bad Request");}
+    public static ResultBuilder Forbidden() {return new ResultBuilder(403, "Forbidden");}
     public static ResultBuilder NotFound() {return new ResultBuilder(404, "Not Found");}
 }

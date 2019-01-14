@@ -27,3 +27,5 @@
 log
 .mvn
 target
+mvnw
+mvnw.cmd

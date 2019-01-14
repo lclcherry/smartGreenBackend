@@ -2,11 +2,10 @@ package com.micer.backend.controller;
 
 import com.micer.backend.entity.Result;
 import com.micer.backend.service.EntityService;
-import com.micer.backend.utils.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.NotBlank;
@@ -33,9 +32,7 @@ public class EntityController
     public Result getEntityInfo(@PathVariable String uuid)
     {
         logger.info("访问/v1/entity/{uuid}");
-//        return entityService.getEntityInfo(uuid);
-        Result result =  entityService.getEntityInfo(uuid);
-        return result;
+        return  entityService.getEntityInfo(uuid);
     }
     
     @PostMapping("/details")
@@ -43,13 +40,9 @@ public class EntityController
     {
         String uuid = (String) requestParams.get("uuid");
         String type = (String) requestParams.get("type");
-//        Long startTime = ((Integer) requestParams.get("startTime")).longValue();
-//        Long endTime = ((Integer) requestParams.get("endTime")).longValue();
-        Long startTime = Long.parseLong((String)requestParams.get("startTime"));
-        Long endTime = Long.parseLong((String)requestParams.get("endTime"));
-//        return entityService.getDetails(uuid, type, startTime, endTime);
-        Result result = entityService.getDetails(uuid, type, startTime, endTime);
-        return result;
+        Long startTime = (Long) requestParams.get("startTime");
+        Long endTime = (Long) requestParams.get("endTime");
+        return entityService.getDetails(uuid, type, startTime, endTime);
     }
     
     @PostMapping("/moreDetails")
@@ -58,39 +51,36 @@ public class EntityController
         String master_uuid = rb.get("master_uuid").toString();
         String uuid = rb.get("uuid").toString();
         String type = rb.get("type").toString();
-//        Long startTime = ((Integer) rb.get("startTime")).longValue();
-//        Long endTime = ((Integer) rb.get("endTime")).longValue();
-        Long startTime = Long.parseLong((String)rb.get("startTime"));
-        Long endTime = Long.parseLong((String)rb.get("endTime"));
+        Long startTime = (Long) rb.get("startTime");
+        Long endTime = (Long) rb.get("endTime");
         logger.info("MoreDetail数据:master_uuid[{}],uuid[{}],type[{}],startTime[{}],endTime[{}]", master_uuid, uuid, type, startTime, endTime);
-        Result result = new Result(201, "");
-        if (StringUtil.isEmpty(master_uuid))
+        if (StringUtils.isEmpty(master_uuid))
         {
-            result.setMsg("上层实体为空，无法获取uuid:{uuid}的同一层级实体数据");
-            return result;
+            return Result.BadRequest().msg("上层实体为空，无法获取uuid:{uuid}的同一层级实体数据").build();
         }
-        if (StringUtil.isEmpty(uuid) || StringUtil.isEmpty(type) || startTime == null || endTime == null)
+        if (StringUtils.isEmpty(uuid) || StringUtils.isEmpty(type) || startTime == null || endTime == null)
         {
-            result.setMsg("数据不全，无法查询");
-            return result;
+            return Result.BadRequest().msg("数据不全，无法查询").build();
         }
         
         return entityService.getMoreDetail(master_uuid, uuid, type, startTime, endTime);
     }
     
-    @GetMapping("/moreDetails")
-    @ResponseBody
-    public Result getMoreDetail(@Size(min = 5, max = 13, message = "uuid长度为5或13")
-                                @RequestParam("master_uuid") String master_uuid,
-                                @Size(min = 5, max = 13, message = "uuid长度为5或13")
-                                @RequestParam("uuid") String uuid,
-                                @NotBlank @RequestParam("type") String type,
-                                @NotNull @RequestParam("startTime") Long startTime,
-                                @NotNull @RequestParam("endTime") Long endTime)
-    {
-        logger.info("MoreDetail数据:master_uuid[{}],uuid[{}],type[{}],startTime[{}],endTime[{}]", master_uuid, uuid, type, startTime, endTime);
-        return entityService.getMoreDetail(master_uuid, uuid, type, startTime, endTime);
-    }
+    // 用SpringBoot提供的参数验证机制来检验参数，而不是上面那种写很多业务逻辑的判断
+    // 这段代码先别删吧，暂时留着
+//    @GetMapping("/moreDetails")
+//    @ResponseBody
+//    public Result getMoreDetail(@Size(min = 5, max = 13, message = "uuid长度为5或13")
+//                                @RequestParam("master_uuid") String master_uuid,
+//                                @Size(min = 5, max = 13, message = "uuid长度为5或13")
+//                                @RequestParam("uuid") String uuid,
+//                                @NotBlank @RequestParam("type") String type,
+//                                @NotNull @RequestParam("startTime") Long startTime,
+//                                @NotNull @RequestParam("endTime") Long endTime)
+//    {
+//        logger.info("MoreDetail数据:master_uuid[{}],uuid[{}],type[{}],startTime[{}],endTime[{}]", master_uuid, uuid, type, startTime, endTime);
+//        return entityService.getMoreDetail(master_uuid, uuid, type, startTime, endTime);
+//    }
     
     //    @GetMapping("/v1/getSlaves/{uuid}")
     //    @ResponseBody

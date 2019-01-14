@@ -5,6 +5,9 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * 抽象时间维度的类型，类似EntityType
+ */
 public enum TimeType
 {
     HOUR("hour"),
