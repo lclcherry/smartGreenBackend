@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.text.MessageFormat;
 import java.util.Map;
 import java.util.logging.Logger;
 
@@ -31,7 +32,7 @@ public class GetMoreDetailController {
         logger.info("MoreDetail数据:master_uuid[{}],uuid[{}],type[{}],startTime[{}],endTime[{}]",master_uuid,uuid,type,startTime,endTime);
         JsonResult result = new JsonResult("201","");
         if(master_uuid == "") {
-            result.setMsg("上层实体为空，无法获取uuid:{uuid}的同一层级实体数据");
+            result.setMsg(MessageFormat.format("上层实体为空，无法获取uuid:{0}的同一层级实体数据",uuid));
             return result;
         }
         if(uuid == "" || type == "" || startTime == null || endTime == null) {
