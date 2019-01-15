@@ -4,9 +4,21 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.micer.backend.dao.EnergyConsumptionDao">
     <select id="getPeriodEC" resultType="java.util.HashMap">
-        select run_at, value from ${table} where uuid = #{uuid} order by run_at desc limit 7
+        select `run_at`, `value` from ${d_entity_time_t} where uuid = #{uuid} order by run_at desc limit 7
     </select>
     <select id="getFixTimePeriodEC" resultType="java.util.HashMap">
-        select run_at, value from ${table} where uuid = #{uuid} and run_at &gt;= #{startTime} and run_at &lt;= #{endTime}
+        select `run_at`, `value` from ${d_entity_time_t} where uuid = #{uuid} and run_at &gt;= #{startTime} and run_at &lt;= #{endTime}
+    </select>
+    <!--<select id="getFixTimePeriodECValues" resultType="java.lang.Double">-->
+        <!--select `value` from ${d_entity_time_t} where uuid = #{uuid} and run_at &gt;= #{startTime} and run_at &lt;= #{endTime}-->
+    <!--</select>-->
+    <select id="getMostRecentEC" resultType="java.lang.Number">
+        select `value` from ${d_entity_time_t} where `uuid` = #{uuid} order by `run_at` desc limit 1;
+    </select>
+    <select id="getTop2EC" resultType="java.util.Map">
+        select `run_at`, `value` from ${d_entity_time_t} where `uuid` = #{uuid} order by `run_at` desc limit 2;
+    </select>
+    <select id="getValueAt" resultType="java.lang.Double">
+        select `value` from ${d_entity_time_t} where `uuid` = #{uuid} and `run_at` = #{run_at};
     </select>
 </mapper>
