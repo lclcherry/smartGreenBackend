@@ -202,36 +202,30 @@ public class EntityServiceImpl implements EntityService
      */
     @Override
     public Result getMoreDetail(String master_uuid, String uuid, String type, Long startTime, Long endTime) {
-        if(StringUtils.isEmpty(master_uuid)) {
-            return Result.BadRequest().msg("master_uuid为空，无法获取uuid同一层级实体数据").build();
-        }
-        
         EntityType buildingType = EntityType.getEntityTypeFromUUID(master_uuid);
         EntityType slaveBuildingType = EntityType.getEntityTypeFromUUID(uuid);
         String masterSlaveTable = slaveBuildingType.getMasterRelationTable();
         String buildingTable = slaveBuildingType.getEntityTable();
-        
+
         List<String> slave_uuid_list = buildingEntityDao.getSlavesUuid(master_uuid,masterSlaveTable);
-        
+
         List<Map<String,Object>> slaveData = new ArrayList<>();
         double[] valueSum = new double[slave_uuid_list.size()];
         List<Map<String,Number>> value_rate = new ArrayList<>();
         double totalValue = 0;
-        DecimalFormat twoDotFormat = new DecimalFormat("#.00");
-        
+
         for(int i = 0;i<slave_uuid_list.size();i++) {
             String slave_uuid = slave_uuid_list.get(i);
             BuildingEntity buildingEntity = buildingEntityDao.getEntityInfo(slave_uuid,buildingTable);
             List<Map<String, Number>> energy = getFixedTimePeriodEC(slave_uuid,slaveBuildingType,TimeType.fromType(type),startTime,endTime);
             for(int j = 0;j<energy.size();j++) {
-                Map<String, Number> time_value = energy.get(i);
+                Map<String, Number> time_value = energy.get(j);
                 double db = time_value.get("value").doubleValue();
                 valueSum[i] += Math.max(0, db); // 未采集到的值为-1
             }
             totalValue += valueSum[i];
-            
+
             Map<String,Number> value_rate_map = new HashMap<>();
-            value_rate_map.put("value",Math.floor(valueSum[i]));
             value_rate.add(value_rate_map);
             Map<String,Object> slaveDataMap = new HashMap<>();
             slaveDataMap.put("uuid",buildingEntity.getUuid());
@@ -239,16 +233,16 @@ public class EntityServiceImpl implements EntityService
             slaveDataMap.put("order",buildingEntity.getOrder());
             slaveData.add(slaveDataMap);
         }
-        
+
         for(int i = 0;i<slave_uuid_list.size();i++) {
-            String slave = slave_uuid_list.get(i);
-            double rate = (valueSum[i]/totalValue)*100;
+            double rate = totalValue == 0 ? 0 : (valueSum[i]/totalValue)*100;
+            value_rate.get(i).put("value",Math.floor(valueSum[i]));
             BigDecimal bg = new BigDecimal(rate);
-            value_rate.get(i).put("rate",bg.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
+            value_rate.get(i).put("rate",bg.setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue());
             Map<String,Object> slaveDataMap = slaveData.get(i);
             slaveDataMap.put("data",value_rate.get(i));
         }
-        
+
         Map<String,Object> data = new HashMap<>();
         data.put("comparison",slaveData);
         return Result.OK().data(data).build();
