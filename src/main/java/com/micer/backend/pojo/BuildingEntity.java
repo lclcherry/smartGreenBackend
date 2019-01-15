@@ -2,6 +2,8 @@ package com.micer.backend.pojo;
 
 import org.apache.ibatis.type.Alias;
 
+import java.io.Serializable;
+
 /**建筑实体
  * 数据库表: e_xxx_t;
  * 字段:
@@ -13,7 +15,7 @@ import org.apache.ibatis.type.Alias;
  * */
 
 @Alias("buildingEntity")
-public class BuildingEntity {
+public class BuildingEntity implements Serializable {
     private int id;
     private String uuid;
     private String name;

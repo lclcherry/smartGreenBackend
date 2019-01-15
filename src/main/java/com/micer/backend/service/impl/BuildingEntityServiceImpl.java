@@ -4,7 +4,10 @@ import com.micer.backend.dao.BuildingEntityDao;
 import com.micer.backend.pojo.BuildingEntity;
 import com.micer.backend.service.BuildingEntityService;
 import com.micer.backend.service.EnergyConsumptionService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,6 +19,8 @@ import java.util.Map;
 @Service
 @Transactional
 public class BuildingEntityServiceImpl implements BuildingEntityService {
+    private static Logger logger = LoggerFactory.getLogger(BuildingEntityServiceImpl.class);
+
     @Autowired
     private BuildingEntityDao buildingEntityDao = null;
 
@@ -63,6 +68,7 @@ public class BuildingEntityServiceImpl implements BuildingEntityService {
     }
 
     @Override
+    @Cacheable(value = "buildingEntity", key = "#uuid")
     public BuildingEntity getBuildingEntityInfo(String uuid, int buildingType){
         BuildingEntity buildingEntity = new BuildingEntity();
 
@@ -80,7 +86,7 @@ public class BuildingEntityServiceImpl implements BuildingEntityService {
                 buildingEntity = buildingEntityDao.getEntityInfo(uuid, "e_room_t");
                 break;
         }
-
+        logger.info("我查了数据库啊");
         return buildingEntity;
     }
 
