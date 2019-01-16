@@ -45,42 +45,43 @@ public class EntityController
         return entityService.getDetails(uuid, type, startTime, endTime);
     }
     
-    @PostMapping("/moreDetails")
-    public Result getMoreDetail_0(@RequestBody Map<String, Object> rb)
-    {
-        String master_uuid = rb.get("master_uuid").toString();
-        String uuid = rb.get("uuid").toString();
-        String type = rb.get("type").toString();
-        Long startTime = (Long) rb.get("startTime");
-        Long endTime = (Long) rb.get("endTime");
-        logger.info("MoreDetail数据:master_uuid[{}],uuid[{}],type[{}],startTime[{}],endTime[{}]", master_uuid, uuid, type, startTime, endTime);
-        if (StringUtils.isEmpty(master_uuid))
-        {
-            return Result.BadRequest().msg("上层实体为空，无法获取uuid:{uuid}的同一层级实体数据").build();
-        }
-        if (StringUtils.isEmpty(uuid) || StringUtils.isEmpty(type) || startTime == null || endTime == null)
-        {
-            return Result.BadRequest().msg("数据不全，无法查询").build();
-        }
-        
-        return entityService.getMoreDetail(master_uuid, uuid, type, startTime, endTime);
-    }
+//    @PostMapping("/moreDetails")
+//    public Result getMoreDetail_0(@RequestBody Map<String, Object> rb)
+//    {
+//        String master_uuid = rb.get("master_uuid").toString();
+//        String uuid = rb.get("uuid").toString();
+//        String type = rb.get("type").toString();
+//        Long startTime = (Long) rb.get("startTime");
+//        Long endTime = (Long) rb.get("endTime");
+//        logger.info("MoreDetail数据:master_uuid[{}],uuid[{}],type[{}],startTime[{}],endTime[{}]", master_uuid, uuid, type, startTime, endTime);
+//        if (StringUtils.isEmpty(master_uuid))
+//        {
+//            return Result.BadRequest().msg("上层实体为空，无法获取uuid:{uuid}的同一层级实体数据").build();
+//        }
+//        if (StringUtils.isEmpty(uuid) || StringUtils.isEmpty(type) || startTime == null || endTime == null)
+//        {
+//            return Result.BadRequest().msg("数据不全，无法查询").build();
+//        }
+//
+//        return entityService.getMoreDetail(master_uuid, uuid, type, startTime, endTime);
+//    }
     
     // 用SpringBoot提供的参数验证机制来检验参数，而不是上面那种写很多业务逻辑的判断
     // 这段代码先别删吧，暂时留着
-//    @GetMapping("/moreDetails")
-//    @ResponseBody
-//    public Result getMoreDetail(@Size(min = 5, max = 13, message = "uuid长度为5或13")
-//                                @RequestParam("master_uuid") String master_uuid,
-//                                @Size(min = 5, max = 13, message = "uuid长度为5或13")
-//                                @RequestParam("uuid") String uuid,
-//                                @NotBlank @RequestParam("type") String type,
-//                                @NotNull @RequestParam("startTime") Long startTime,
-//                                @NotNull @RequestParam("endTime") Long endTime)
-//    {
-//        logger.info("MoreDetail数据:master_uuid[{}],uuid[{}],type[{}],startTime[{}],endTime[{}]", master_uuid, uuid, type, startTime, endTime);
-//        return entityService.getMoreDetail(master_uuid, uuid, type, startTime, endTime);
-//    }
+    @GetMapping("/moreDetails")
+    @ResponseBody
+    public Result getMoreDetail(@Size(min = 5, max = 13, message = "uuid长度为5或13")
+                                @RequestParam("master_uuid") String master_uuid,
+                                @Size(min = 5, max = 13, message = "uuid长度为5或13")
+                                @RequestParam("uuid") String uuid,
+                                @NotBlank @RequestParam("type") String type,
+                                @RequestParam("startTime") Long startTime,
+                                @RequestParam("endTime") Long endTime,
+                                @RequestParam("energyType") String energyType)
+    {
+        logger.info("MoreDetail数据:master_uuid[{}],uuid[{}],type[{}],startTime[{}],endTime[{}]", master_uuid, uuid, type, startTime, endTime);
+        return entityService.getMoreDetail(master_uuid, uuid, type, startTime, endTime, energyType);
+    }
     
     //    @GetMapping("/v1/getSlaves/{uuid}")
     //    @ResponseBody

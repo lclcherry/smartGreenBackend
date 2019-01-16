@@ -18,6 +18,7 @@ import org.springframework.util.StringUtils;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Service
@@ -201,7 +202,33 @@ public class EntityServiceImpl implements EntityService
      * @return
      */
     @Override
-    public Result getMoreDetail(String master_uuid, String uuid, String type, Long startTime, Long endTime) {
+    public Result getMoreDetail(String master_uuid, String uuid, String type, Long startTime, Long endTime, String energyType) {
+        if(startTime == null || endTime == null) {
+            Date currentDate = new Date();
+            endTime = endTime == null ? currentDate.getTime() : endTime;
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(new Date(endTime));
+            switch(type) {
+                case("year"):
+                    calendar.set(Calendar.YEAR,calendar.get(Calendar.YEAR)-7);
+                    break;
+                case("month"):
+                    calendar.set(Calendar.MONTH,calendar.get(Calendar.MONTH)-7);
+                    break;
+                case("week"):
+                    calendar.set(Calendar.DATE,calendar.get(Calendar.DATE)-7*7);
+                    break;
+                case("day"):
+                    calendar.set(Calendar.DATE,calendar.get(Calendar.DATE)-7);
+                    break;
+                case("hour"):
+                    calendar.set(Calendar.HOUR,calendar.get(Calendar.HOUR)-7);
+                    break;
+            }
+            Date formerDate = calendar.getTime();
+            startTime = startTime == null ? formerDate.getTime() : startTime;
+
+        }
         EntityType buildingType = EntityType.getEntityTypeFromUUID(master_uuid);
         EntityType slaveBuildingType = EntityType.getEntityTypeFromUUID(uuid);
         String masterSlaveTable = slaveBuildingType.getMasterRelationTable();
@@ -262,4 +289,5 @@ public class EntityServiceImpl implements EntityService
         List<Map<String, Number>> result = energyConsumptionDao.getFixTimePeriodEC(uuid, tableStr,startTime,endTime);
         return result;
     }
+
 }

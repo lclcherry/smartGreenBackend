@@ -36,7 +36,7 @@ public interface EnergyConsumptionDao {
      * */
     public List<Map<String, Number>> getFixTimePeriodEC(@Param("uuid") String uuid, @Param("d_entity_time_t") String d_entity_time_t,
                                     @Param("startTime") Long startTime, @Param("endTime") Long endTime);
-    
+
     /**
      * 获取实体从开始日期到终止日期的能耗数据的值
      * @param uuid 实体唯一标识
