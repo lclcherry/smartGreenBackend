@@ -9,6 +9,7 @@ import com.micer.backend.enums.EntityType;
 import com.micer.backend.enums.TimeType;
 import com.micer.backend.pojo.BuildingEntity;
 import com.micer.backend.service.EntityService;
+import com.micer.backend.service.RedisService;
 import com.micer.backend.utils.EntityUtil;
 import com.micer.backend.utils.TimeUtil;
 import org.apache.ibatis.jdbc.Null;
@@ -29,7 +30,10 @@ public class EntityServiceImpl implements EntityService
     
     @Autowired
     private EnergyConsumptionDao energyConsumptionDao;
-    
+
+    @Autowired
+    private RedisService redisService;
+
     /**
      * 获取实体基本信息 + 上层建筑信息
      * @param uuid 实体标识
